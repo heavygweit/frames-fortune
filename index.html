@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Fortune Teller" />
     <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="assets/fortune.jpg" />
+    <meta property="fc:frame:image" content="https://heavygweit.github.io/frames-fortune/assets/fortune.jpg" />
     <meta property="fc:frame:button:1" content="Tell me my fortune" />
     <title>⋇⋆✦⋆⋇fortunes⋇⋆✦⋆⋇</title>
 </head>
 <body>
     <section>
-        <img class="fortune" src="assets/fortune.jpg">
+        <img class="fortune" src="https://heavygweit.github.io/frames-fortune/assets/fortune.jpg">
         <button onClick="tellFortune()" id="fortuneButton">Answer my question</button>
         <button onClick="resetFortune()" style="display:none;" id="resetButton">Want to ask another?</button>
     </section>
 
     <script>
          const imageUrls = [
-        'assets/res-pos-1.jpg',
-        'assets/res-pos-2.jpg',
-        'assets/res-pos-3.jpg',
-        'assets/res-ind-1.jpg',
-        'assets/res-ind-2.jpg',
-        'assets/res-neg-1.jpg',
-        'assets/res-neg-2.jpg'
+        'https://heavygweit.github.io/frames-fortune/assets/res-pos-1.jpg',
+        'https://heavygweit.github.io/frames-fortune/assets/res-pos-2.jpg',
+        'https://heavygweit.github.io/frames-fortune/assets/res-pos-3.jpg',
+        'https://heavygweit.github.io/frames-fortune/assets/res-ind-1.jpg',
+        'https://heavygweit.github.io/frames-fortune/assets/res-ind-2.jpg',
+        'https://heavygweit.github.io/frames-fortune/assets/res-neg-1.jpg',
+        'https://heavygweit.github.io/frames-fortune/assets/res-neg-2.jpg'
     ];
 
     let lastImageIndex = -1;
@@ -38,7 +38,7 @@
     function resetFortune() {
         document.getElementById('fortuneButton').style.display = 'block';
         document.getElementById('resetButton').style.display = 'none';
-        document.querySelector('.fortune').src = 'assets/fortune.jpg';
+        document.querySelector('.fortune').src = 'https://heavygweit.github.io/frames-fortune/assets/fortune.jpg';
     }
 
     function changeImage() {

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Fortune Teller" />
+    <meta property="fc:frame" content="vNext" />
+    <meta property="fc:frame:image" content="assets/fortune.jpg" />
+    <meta property="fc:frame:button:1" content="Tell me my fortune" />
+    <title>magic 8 ball</title>
+</head>
+<body>
+    <section>
+        <img class="fortune" src="assets/fortune.jpg">
+        <button onClick="tellFortune()" id="fortuneButton">Answer my question</button>
+        <button onClick="resetFortune()" style="display:none;" id="resetButton">Want to ask another?</button>
+    </section>
+
+    <script>
+         const imageUrls = [
+        'assets/res-pos-1.jpg',
+        'assets/res-pos-2.jpg',
+        'assets/res-pos-3.jpg',
+        'assets/res-ind-1.jpg',
+        'assets/res-ind-2.jpg',
+        'assets/res-neg-1.jpg',
+        'assets/res-neg-2.jpg'
+    ];
+
+    let lastImageIndex = -1;
+
+    function tellFortune() {
+        document.getElementById('fortuneButton').style.display = 'none';
+        document.getElementById('resetButton').style.display = 'block';
+        changeImage();
+    }
+
+    function resetFortune() {
+        document.getElementById('fortuneButton').style.display = 'block';
+        document.getElementById('resetButton').style.display = 'none';
+        document.querySelector('.fortune').src = 'assets/fortune.jpg';
+    }
+
+    function changeImage() {
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * imageUrls.length);
+        } while (randomIndex === lastImageIndex);
+        lastImageIndex = randomIndex;
+        const selectedImageUrl = imageUrls[randomIndex];
+        document.querySelector('.fortune').src = selectedImageUrl;
+    }
+    </script>
+</body>
+</html>
+
